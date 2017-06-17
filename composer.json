@@ -1,0 +1,20 @@
+{
+    "name": "goodwong/laravel-subscription",
+    "description": "Laravel 订阅模块，用于有时间限制的服务订阅",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "william",
+            "email": "goodwong@foxmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+    },
+    "autoload": {
+        "psr-4": {
+            "Goodwong\\LaravelSubscription\\": "src/"
+        }
+    }
+}
