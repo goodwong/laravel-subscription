@@ -24,11 +24,11 @@ class SubscriptionHandler
         $now = time();
         $start_at = data_get($config, 'start_at', date('Y-m-d H:i:s', $now));
         $end_at = date('Y-m-d H:i:s', strtotime($start_at) + $days * 86400);
+        $exist = Subscription::where('user_id', $user_id)->where('type', $type)->first();
         $subscription = Subscription::create(
             compact('user_id', 'type', 'level', 'comment', 'start_at', 'end_at')
         );
 
-        $exist = Subscription::where('user_id', $user_id)->where('type', $type)->first();
         if ($exist) {
             $exist->update([
                 'comment' => "{$exist->comment} replace with new subscription #{$subscription->id}",
